@@ -1,6 +1,5 @@
 import faturamento from "./faturamento.json" assert { type: "json" };
-import  faturamentoMensalPorDistribuidora  from "./faturamentoMensalPorDistribuidora.json" assert {type:"json"}
-
+import faturamentoMensalPorDistribuidora from "./faturamentoMensalPorDistribuidora.json" assert { type: "json" };
 
 //Solução do exercício 1
 const INDICE = 13;
@@ -38,7 +37,6 @@ function valueIsFibonacci(num) {
 //Digite o número como parâmetro da função para obter a resposta
 //console.log(valueIsFibonacci(1));
 
-
 // Solução do exercício 3
 function calculateBilling(faturamento) {
   const billedDays = faturamento.filter((entry) => entry.valor > 0);
@@ -58,9 +56,7 @@ function calculateBilling(faturamento) {
   };
 }
 
-const billingCalculationResult = calculateBilling(
-  faturamento
-);
+const billingCalculationResult = calculateBilling(faturamento);
 const minValue = billingCalculationResult.minValues.toFixed(2);
 const maxValue = billingCalculationResult.maxValues.toFixed(2);
 const totalDaysWithHighestRevenue =
@@ -75,18 +71,32 @@ const totalDaysWithHighestRevenue =
 //   `O numero de dias no mês em que o valor de faturamento diário foi superior à média mensal foi de ${totalDaysWithHighestRevenue} dias.`
 // );
 
- //Solução do exercício 4
-function totalAmountPerMonth(faturamento){
-  const valuesObject = Object.values(faturamento)
-  const valuesPerMonth = valuesObject.map((entry) => entry.valor)
-  const totalValuesPerMonth = valuesPerMonth.reduce((acc, value) => acc + value);
-  const total = totalValuesPerMonth
-  console.log(total)
-  return faturamento.map(item => ({
+//Solução do exercício 4
+function totalAmountPerMonth(faturamento) {
+  const valuesObject = Object.values(faturamento);
+  const valuesPerMonth = valuesObject.map((entry) => entry.valor);
+  const totalValuesPerMonth = valuesPerMonth.reduce(
+    (acc, value) => acc + value
+  );
+  const total = totalValuesPerMonth;
+  console.log(total);
+  return faturamento.map((item) => ({
     estado: item.estado,
     valor: item.valor,
-    percentual: ((item.valor / total) * 100).toFixed(2) + '%',
+    percentual: ((item.valor / total) * 100).toFixed(2) + "%",
   }));
 }
 
 // console.log(totalAmountPerMonth(faturamentoMensalPorDistribuidora))
+
+//Solução do exercício 5
+//Passar array como parâmetro da função
+function invertCharacter(array) {
+  let newArray = [];
+  let character = 0;
+  for (let i = array.length - 1; i >= 0; i--) {
+    newArray[character++] = array[i];
+  }
+  return newArray;
+}
+// console.log(invertCharacter([1,20,6,8,9]));

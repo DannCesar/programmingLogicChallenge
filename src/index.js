@@ -38,6 +38,8 @@ function valueIsFibonacci(num) {
 //Digite o número como parâmetro da função para obter a resposta
 //console.log(valueIsFibonacci(1));
 
+
+// Solução do exercício 3
 function calculateBilling(faturamento) {
   const billedDays = faturamento.filter((entry) => entry.valor > 0);
   const values = faturamento.map((entry) => entry.valor);
@@ -63,8 +65,6 @@ const minValue = billingCalculationResult.minValues.toFixed(2);
 const maxValue = billingCalculationResult.maxValues.toFixed(2);
 const totalDaysWithHighestRevenue =
   billingCalculationResult.daysWithHighestRevenue;
-
-// Solução do exercício 3
 // console.log(
 //   `O menor valor de faturamento ocorrido em um dia do mês foi de ${minValue} reais.`
 // );

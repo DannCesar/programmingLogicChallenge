@@ -1,6 +1,8 @@
 import faturamento from "./faturamento.json" assert { type: "json" };
 import  faturamentoMensalPorDistribuidora  from "./faturamentoMensalPorDistribuidora.json" assert {type:"json"}
 
+
+//Solução do exercício 1
 const INDICE = 13;
 
 function findValue(INDICE) {
@@ -13,10 +15,9 @@ function findValue(INDICE) {
   }
   return SOMA;
 }
-
-//Solução do exercício 1
 // console.log("O valor final da variável SOMA é:", findValue(INDICE));
 
+//Solução do exercício 2
 function valueIsFibonacci(num) {
   let a = 0;
   let b = 1;
@@ -34,7 +35,6 @@ function valueIsFibonacci(num) {
   }
   return unaffirmativeMessage;
 }
-//Solução do exercício 2
 //Digite o número como parâmetro da função para obter a resposta
 //console.log(valueIsFibonacci(1));
 

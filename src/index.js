@@ -56,14 +56,14 @@ function calculateBilling(faturamento) {
 }
 
 const billingCalculationResult = calculateBilling(
-  faturamento.faturamentoMensal
+  faturamento
 );
 const minValue = billingCalculationResult.minValues.toFixed(2);
 const maxValue = billingCalculationResult.maxValues.toFixed(2);
 const totalDaysWithHighestRevenue =
   billingCalculationResult.daysWithHighestRevenue;
 
-//Solução do exercício numero 3
+// Solução do exercício numero 3
 // console.log(
 //   `O menor valor de faturamento ocorrido em um dia do mês foi de ${minValue} reais.`
 // );
@@ -73,3 +73,4 @@ const totalDaysWithHighestRevenue =
 // console.log(
 //   `O numero de dias no mês em que o valor de faturamento diário foi superior à média mensal foi de ${totalDaysWithHighestRevenue} dias.`
 // );
+

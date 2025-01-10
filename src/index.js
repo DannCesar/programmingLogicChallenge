@@ -11,4 +11,4 @@ function findValue(INDICE) {
   return SOMA;
 }
 
-console.log(findValue(INDICE));
+console.log("O valor final da variável SOMA é:", findValue(INDICE));

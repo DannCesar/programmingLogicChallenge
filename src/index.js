@@ -1,4 +1,5 @@
 import faturamento from "./faturamento.json" assert { type: "json" };
+import  faturamentoMensalPorDistribuidora  from "./faturamentoMensalPorDistribuidora.json" assert {type:"json"}
 
 const INDICE = 13;
 
@@ -13,7 +14,7 @@ function findValue(INDICE) {
   return SOMA;
 }
 
-//Resultado do exercício 1
+//Solução do exercício 1
 // console.log("O valor final da variável SOMA é:", findValue(INDICE));
 
 function valueIsFibonacci(num) {
@@ -33,7 +34,7 @@ function valueIsFibonacci(num) {
   }
   return unaffirmativeMessage;
 }
-//Solução do exercício numero 2
+//Solução do exercício 2
 //Digite o número como parâmetro da função para obter a resposta
 //console.log(valueIsFibonacci(1));
 
@@ -63,7 +64,7 @@ const maxValue = billingCalculationResult.maxValues.toFixed(2);
 const totalDaysWithHighestRevenue =
   billingCalculationResult.daysWithHighestRevenue;
 
-// Solução do exercício numero 3
+// Solução do exercício 3
 // console.log(
 //   `O menor valor de faturamento ocorrido em um dia do mês foi de ${minValue} reais.`
 // );
@@ -74,3 +75,18 @@ const totalDaysWithHighestRevenue =
 //   `O numero de dias no mês em que o valor de faturamento diário foi superior à média mensal foi de ${totalDaysWithHighestRevenue} dias.`
 // );
 
+ //Solução do exercício 4
+function totalAmountPerMonth(faturamento){
+  const valuesObject = Object.values(faturamento)
+  const valuesPerMonth = valuesObject.map((entry) => entry.valor)
+  const totalValuesPerMonth = valuesPerMonth.reduce((acc, value) => acc + value);
+  const total = totalValuesPerMonth
+  console.log(total)
+  return faturamento.map(item => ({
+    estado: item.estado,
+    valor: item.valor,
+    percentual: ((item.valor / total) * 100).toFixed(2) + '%',
+  }));
+}
+
+// console.log(totalAmountPerMonth(faturamentoMensalPorDistribuidora))
